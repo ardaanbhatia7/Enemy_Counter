@@ -15,7 +15,7 @@ An intentionally FBI-vibe “kill list” tracker built for a friend who keeps r
 - Tech: Plain HTML/CSS/JS (no build step). Uses `fetch` for CSV, custom CSV parser, DOM rendering, and `localStorage` for theme.
 
 ## Live Site
-Hosted on GitHub Pages: https://ardaanbhatia7.github.io/Enemy_Counter/https://ardaanbhatia7.github.io/Enemy_Counter/
+Hosted on GitHub Pages: https://ardaanbhatia7.github.io/Enemy_Counter/
 
 ## Setup (to run locally)
 - Download or clone this folder.
