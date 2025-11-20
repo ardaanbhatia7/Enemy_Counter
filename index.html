@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aarya Chiripal — Enemy Counter</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body data-theme="dark">
+  <h1>Enemy Counter: Aarya Chiripal</h1>
+
+  <section class="panel">
+    <div class="controls">
+      <div class="field">
+        <label for="searchInput">Search</label>
+        <input id="searchInput" type="search" placeholder="Name or reason..." autocomplete="off">
+      </div>
+      <div class="field">
+        <label for="levelFilter">Threat Level</label>
+        <select id="levelFilter">
+          <option value="">All</option>
+          <option value="high">High</option>
+          <option value="medium">Medium</option>
+          <option value="low">Low</option>
+        </select>
+      </div>
+      <button id="refreshBtn" type="button">Refresh</button>
+      <button id="themeToggle" type="button">Light mode</button>
+    </div>
+
+    <div class="actions">
+      <button id="exportCsvBtn" type="button">Export CSV</button>
+      <button id="exportJsonBtn" type="button">Export JSON</button>
+    </div>
+  </section>
+
+  <div class="status-bar">
+    <span class="status" data-status>Loading…</span>
+    <span class="last-updated" id="lastUpdated">Last update: —</span>
+    <span class="spinner" data-spinner hidden></span>
+  </div>
+
+  <table id="enemyTable">
+    <thead>
+      <tr>
+        <th data-sort="name">Name <span class="sort-indicator" data-sort-indicator="name">⇅</span></th>
+        <th data-sort="threat">Threat Level <span class="sort-indicator" data-sort-indicator="threat">⇅</span></th>
+        <th data-sort="reason">Reason <span class="sort-indicator" data-sort-indicator="reason">⇅</span></th>
+        <th data-sort="date">Date Added <span class="sort-indicator" data-sort-indicator="date">⇅</span></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td colspan="4">Loading…</td></tr>
+    </tbody>
+  </table>
+
+  <div class="footer">
+    <p>Source: Classified Google Sheet | Auto-updates every 60 s</p>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>

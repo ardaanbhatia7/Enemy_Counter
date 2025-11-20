@@ -1,0 +1,249 @@
+:root {
+  --bg: #0b0b0b;
+  --panel: #101010;
+  --text: #00ff99;
+  --muted: #7fa18f;
+  --accent: #ff4444;
+  --border: #00ff99;
+  --table-head: #111;
+  --row-alt: #101010;
+  --badge-high: #c62828;
+  --badge-medium: #ffca28;
+  --badge-low: #26a69a;
+}
+
+body[data-theme="light"] {
+  --bg: #f7f7f7;
+  --panel: #ffffff;
+  --text: #0a3425;
+  --muted: #53605d;
+  --accent: #d62525;
+  --border: #0a3425;
+  --table-head: #e9e9e9;
+  --row-alt: #f2f2f2;
+  --badge-high: #d32f2f;
+  --badge-medium: #ffb300;
+  --badge-low: #00897b;
+}
+
+body {
+  background: radial-gradient(circle at 20% 20%, rgba(255, 68, 68, 0.08), transparent 35%),
+    radial-gradient(circle at 80% 0%, rgba(0, 255, 153, 0.08), transparent 30%),
+    var(--bg);
+  color: var(--text);
+  font-family: "Courier New", monospace;
+  padding: 20px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+h1 {
+  text-align: center;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 10px;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px;
+  margin: 16px 0;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.controls,
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+label {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+input,
+select,
+button {
+  font: inherit;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 10px;
+  background: #000;
+  color: var(--text);
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.1s ease;
+}
+
+body[data-theme="light"] input,
+body[data-theme="light"] select {
+  background: #ffffff;
+}
+
+body[data-theme="light"] button {
+  background: var(--accent);
+  color: #fff;
+}
+
+input:focus,
+select:focus,
+button:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+button {
+  cursor: pointer;
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+  font-weight: 700;
+}
+
+button.secondary {
+  background: transparent;
+  color: var(--text);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+.status-bar {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.status {
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  background: var(--panel);
+  color: var(--text);
+}
+
+.status.error {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.last-updated {
+  color: var(--muted);
+}
+
+.spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid var(--muted);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+th,
+td {
+  border: 1px solid var(--border);
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: var(--table-head);
+  color: var(--accent);
+  text-transform: uppercase;
+  cursor: pointer;
+  user-select: none;
+}
+
+tr:nth-child(even) {
+  background-color: var(--row-alt);
+}
+
+.sort-indicator {
+  font-size: 0.9rem;
+  margin-left: 6px;
+  color: var(--muted);
+}
+
+.sort-indicator.active {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 0.9em;
+  color: var(--muted);
+}
+
+/* Threat badges */
+.badge {
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-weight: 700;
+}
+
+.badge.high {
+  color: #fff;
+  background: var(--badge-high);
+}
+
+.badge.medium {
+  color: #111;
+  background: var(--badge-medium);
+}
+
+.badge.low {
+  color: #0b0b0b;
+  background: var(--badge-low);
+}
+
+@media (max-width: 720px) {
+  body {
+    padding: 14px;
+  }
+
+  .panel {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .controls,
+  .actions {
+    width: 100%;
+  }
+
+  .actions {
+    justify-content: flex-start;
+  }
+}
